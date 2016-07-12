@@ -1,32 +1,37 @@
 {
   "name": "intuit-ui-craft-demonstration",
+  "private": true,
   "description": "Test Project for Intuit",
   "version": "0.0.0",
   "license": "MIT",
-  "main": "lib/index.js",
+  "main": "dist/index.html",
   "author": "Rahat Ahmed",
   "repository": "rahatarmanahmed/intuit-ui-craft-demonstration",
   "scripts": {
+    "clean": "rimraf dist",
     "lint": "eslint src/ test/",
-    "test": "ava -r babel-register test/",
-    "build:js": "babel -d lib/ src/",
-    "build:html": "cpx src/index.js lib/",
+    "test": "echo 'No tests available.'",
+    "build:js": "browserify src/js/index.js > dist/index.js",
+    "build:html": "cpx src/index.html dist/",
+    "prebuild": "npm run clean && mkdirp dist",
     "build": "npm run build:js && npm run build:html",
     "pretest": "npm run lint",
-    "watch": "onchange src/ -- npm run build && echo Done",
+    "watch": "watchify src/js/index.js -o dist/index.js -dv",
     "dev": "npm run watch",
     "prepublish": "npm run test && npm run build"
   },
   "devDependencies": {
     "ava": "^0.15.2",
-    "babel-cli": "^6.10.1",
     "babel-eslint": "^6.1.2",
     "babel-preset-es2015": "^6.9.0",
     "babel-preset-stage-0": "^6.5.0",
-    "babel-register": "^6.9.0",
+    "babelify": "^7.3.0",
+    "browserify": "^13.0.1",
     "cpx": "^1.3.1",
     "eslint": "^3.0.1",
-    "onchange": "^2.5.0"
+    "mkdirp": "^0.5.1",
+    "onchange": "^2.5.0",
+    "watchify": "^3.7.0"
   },
   "dependencies": {
     "lodash": "^4.13.1",
@@ -34,5 +39,10 @@
     "react-dom": "^15.2.1",
     "redux": "^3.5.2",
     "weather-icons": "^1.3.2"
+  },
+  "browserify": {
+    "transform": [
+      "babelify"
+    ]
   }
 }
