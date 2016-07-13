@@ -6,16 +6,22 @@ import { iconMap } from '../util';
 import LoadingIcon from './loadingIcon';
 
 const DayForecast = ({ forecast }) => {
-    return <div className='weekly-forecast-day'>
-        <div className='date'>
+    return <div className='weekly-forecast-day row between-xs middle-xs' >
+        <div className='date col-xs-4'>
             {moment(forecast.time * 1000).format('ll')}
         </div>
-        <div className='temperature'>
-            <span className='hi'>{forecast.temperatureMax}</span>
-            <span>/</span>
-            <span className='lo'>{forecast.temperatureMin}</span>
+        <div className='col-xs-4'>
+            <div className='row center-xs'>
+                <div className='icon col-xs-2'>
+                    <i className={iconMap(forecast.icon)}></i>
+                </div>
+                <div className='temperature col-xs-10'>
+                    <span className='hi'>{Math.round(forecast.temperatureMax)}</span>
+                    <span>&nbsp;/&nbsp;</span>
+                    <span className='lo'>{Math.round(forecast.temperatureMin)}</span>
+                </div>
+            </div>
         </div>
-        <div className='icon'><i className={iconMap(forecast.icon)}></i></div>
     </div>;
 };
 
@@ -29,7 +35,7 @@ const WeeklyForecast = ({ forecasts }) => {
 
     const week = forecasts.slice(tomorrowIndex(forecasts), 8);
 
-    return <div className='weekly-forecast'>
+    return <div className='weekly-forecast col-sm-6 col-xs-12'>
         {
             week.map((forecast) => <DayForecast forecast={forecast} key={forecast.time}/>)
         }

@@ -7,7 +7,7 @@ import WeeklyForecast from './weeklyForecast';
 import { changeLocation } from '../actions';
 
 const App = ({ forecast, location }) => {
-    return <div>
+    return <div className='row center-xs around-sm middle-sm'>
         <CurrentWeather forecast={_.get('currently', forecast)} location={location} />
         <WeeklyForecast forecasts={_.get('daily.data', forecast)} />
     </div>;

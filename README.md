@@ -5,7 +5,7 @@ Test Project for Intuit
 Clone this repository and run `npm install`. Then `npm run build` to build the application into dist. Open `dist/index.html` to view the app.
 
 
-## Things that could be improved
+## Things that could be improved but I didn't have the time to do
 
 - Not hardcoding API key into the app where it could be stolen, instead we'd use our own server to handle API requests
 - Having that server also serve the page with server-side rendering
@@ -14,3 +14,4 @@ Clone this repository and run `npm install`. Then `npm run build` to build the a
 - Being a little more conservative with our dependencies so the bundled JS size isn't as large (use lodash piecewise, production build of React)
 - Writing proper tests for redux reducers/actions, and react components
 - Include PropType validations on React components
+- Include HTML and CSS file changes to the watch script
