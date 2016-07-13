@@ -43,3 +43,13 @@ export const requestForecast = (lat, long) => async (dispatch) => {
         dispatch({ type: REQUEST_FORECAST_FAILURE, error: e.message });
     }
 };
+
+// Action creator to change location and update forecast
+export const changeLocation = (address) => async (dispatch, getState) => {
+    await dispatch(requestLocation(address));
+    const state = getState();
+    if(state.location.data) {
+        const { lat, lng } = state.location.data.geometry.location;
+        await dispatch(requestForecast(lat, lng));
+    }
+};
