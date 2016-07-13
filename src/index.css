@@ -7,7 +7,7 @@
 
 .current .icon {
     font-size: 3em;
-    border-right: 1px solid gray;
+    border-right: 1px solid lightgray;
 }
 
 .current .location {
@@ -21,6 +21,15 @@
 
 .current .temperature {
     font-size: 5em;
+}
+
+.weekly-forecast-day {
+    padding: 10px;
+    border-bottom: 1px solid lightgray;
+}
+
+.weekly-forecast-day:last-child {
+    border-bottom: none;
 }
 
 .weekly-forecast-day .icon {

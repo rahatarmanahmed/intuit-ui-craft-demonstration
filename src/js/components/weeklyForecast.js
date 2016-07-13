@@ -7,10 +7,10 @@ import LoadingIcon from './loadingIcon';
 
 const DayForecast = ({ forecast }) => {
     return <div className='weekly-forecast-day row between-xs middle-xs' >
-        <div className='date col-xs-4'>
+        <div className='date col-xs-5 col-sm-4'>
             {moment(forecast.time * 1000).format('ll')}
         </div>
-        <div className='col-xs-4'>
+        <div className='col-xs-5 col-sm-4'>
             <div className='row center-xs'>
                 <div className='icon col-xs-2'>
                     <i className={iconMap(forecast.icon)}></i>
