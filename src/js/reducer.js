@@ -14,7 +14,8 @@ const location = (state = { fetching: false, data: null }, action) => {
         case REQUEST_LOCATION:
             return {
                 ...state,
-                fetching: true
+                fetching: true,
+                data:null
             };
 
         case REQUEST_LOCATION_SUCCESS:
@@ -40,7 +41,8 @@ const forecast = (state = { fetching: false, data: null }, action) => {
         case REQUEST_FORECAST:
             return {
                 ...state,
-                fetching: true
+                fetching: true,
+                data: null
             };
 
         case REQUEST_FORECAST_SUCCESS:

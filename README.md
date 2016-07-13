@@ -7,6 +7,7 @@ Clone this repository and run `npm install`. Then `npm run build` to build the a
 
 ## Things that could be improved but I didn't have the time to do
 
+- Error handling. The app currently does handle errors, but error information isn't shown to the user.
 - Not hardcoding API key into the app where it could be stolen, instead we'd use our own server to handle API requests
 - Having that server also serve the page with server-side rendering
 - Using a CSS preprocessor like LESS for cleaner, maintainable styles (instead of copying them and manually including styles)
@@ -15,3 +16,4 @@ Clone this repository and run `npm install`. Then `npm run build` to build the a
 - Writing proper tests for redux reducers/actions, and react components
 - Include PropType validations on React components
 - Include HTML and CSS file changes to the watch script
+- Instead of defaulting location to Mckinney, TX, use the location api to get their coordinates. This would require adding reverse geocoding api calls to get the city name

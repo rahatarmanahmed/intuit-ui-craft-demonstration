@@ -6,7 +6,7 @@ export const REQUEST_LOCATION_SUCCESS = 'REQUEST_LOCATION_SUCCESS';
 export const REQUEST_LOCATION_FAILURE = 'REQUEST_LOCATION_FAILURE';
 
 // Action creator to request geocoding location by address
-export const requestLocation = (address) => async (dispatch) => {
+const requestLocation = (address) => async (dispatch) => {
     try {
         dispatch({ type: REQUEST_LOCATION });
 
@@ -28,7 +28,7 @@ export const REQUEST_FORECAST_SUCCESS = 'REQUEST_FORECAST_SUCCESS';
 export const REQUEST_FORECAST_FAILURE = 'REQUEST_FORECAST_FAILURE';
 
 // Action creator for requesting forecast
-export const requestForecast = (lat, long) => async (dispatch) => {
+const requestForecast = (lat, long) => async (dispatch) => {
     try {
         dispatch({ type: REQUEST_FORECAST });
 
@@ -45,8 +45,12 @@ export const requestForecast = (lat, long) => async (dispatch) => {
 };
 
 // Action creator to change location and update forecast
-export const changeLocation = (address) => async (dispatch, getState) => {
+export const changeLocation = (address) => async (dispatch) => {
     await dispatch(requestLocation(address));
+    await dispatch(refresh());
+};
+
+export const refresh = () => async (dispatch, getState) => {
     const state = getState();
     if(state.location.data) {
         const { lat, lng } = state.location.data.geometry.location;

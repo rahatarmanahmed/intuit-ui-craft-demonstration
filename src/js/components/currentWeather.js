@@ -20,7 +20,7 @@ const CurrentWeather = ({ forecast, location }) => {
                 </div>
             </div>
             <div className='temperature col-xs-12'>
-                {forecast ? Math.round(forecast.temperature) + '°' : <LoadingIcon />}
+                {forecast ? Math.round(forecast.temperature) + '°F' : <LoadingIcon />}
             </div>
         </div>
     </div>;
