@@ -17,3 +17,5 @@ Clone this repository and run `npm install`. Then `npm run build` to build the a
 - Include PropType validations on React components
 - Include HTML and CSS file changes to the watch script
 - Instead of defaulting location to Mckinney, TX, use the location api to get their coordinates. This would require adding reverse geocoding api calls to get the city name
+- Support for celsius
+- Better styling for the buttons at the bottom and the alerts

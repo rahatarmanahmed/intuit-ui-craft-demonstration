@@ -1,7 +1,5 @@
 import React from 'react';
 
-import LoadingIcon from './loadingIcon';
-
 class Controls extends React.Component {
     constructor() {
         super();
