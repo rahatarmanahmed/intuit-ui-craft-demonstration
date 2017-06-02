@@ -1,4 +1,6 @@
 # intuit-ui-craft-demonstration
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/rahatarmanahmed/intuit-ui-craft-demonstration.svg)](https://greenkeeper.io/)
 Test Project for Intuit
 
 ## Running the app
